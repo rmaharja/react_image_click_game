@@ -25,7 +25,7 @@ class App extends Component {
 
         {this.state.images.map((i)=>(
           <ImageCard 
-          id={i.imageSrc}
+          imageSrc={i.image}
           name={i.name}
           
           ></ImageCard>
