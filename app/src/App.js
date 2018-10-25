@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar";
+import Score from "./components/Score";
+import ImageCard from "./components/ImageCard"
+import images from "./images.json";
 
-const styles = {
-  mainSection: {
-    paddingBottom: '150px',
-    boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)"
-  }
-}
 class App extends Component {
+
+  state = {
+    images,
+    currentCount: 0,
+    highScore:0
+  }
+
   render() {
     return (
       <div>
         <Navbar></Navbar>
-        <div className="card-panel blue-grey lighten-5" style={styles.mainSection}>
-        <div className="container">
-          <h3>React Memory Game </h3>
-          <p className = "flow-text">Click each image ONLY ONCE to win game</p>
-        </div>
-       </div>
+
+        <Score
+        currentCount={this.state.currentCount}
+        highScore={this.state.highScore}
+        ></Score>
+
+        {this.state.images.map((i)=>(
+          <ImageCard 
+          id={i.imageSrc}
+          name={i.name}
+          
+          ></ImageCard>
+        ))
+        
+        }
       </div>
     );
   }
