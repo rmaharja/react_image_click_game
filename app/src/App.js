@@ -12,6 +12,12 @@ class App extends Component {
     currentCount: 0,
     highScore:0
   }
+  handleOnClick(){
+    console.log("Going into handloeOnClick...");
+    this.setState({
+      currentCount: this.state.currentCount++
+    })
+  }
 
   render() {
     return (
@@ -22,16 +28,8 @@ class App extends Component {
         currentCount={this.state.currentCount}
         highScore={this.state.highScore}
         ></Score>
-
-        {this.state.images.map((i)=>(
-          <ImageCard 
-          imageSrc={i.image}
-          name={i.name}
-          
-          ></ImageCard>
-        ))
+        <ImageCard images={this.state.images} handleOnClick={this.handleOnClick}></ImageCard>
         
-        }
       </div>
     );
   }
