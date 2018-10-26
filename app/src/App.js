@@ -14,17 +14,21 @@ class App extends Component {
     clicked: false
   }
 
+  handleIfFalse = () => {
+    console.log("Nice Job..Chang clicked:false to clicked:true");
+    this.setState({
+      clicked:true,
+      currentCount: (this.state.currentCount + 1)
+    });
+  }
+
   handleOnClick = () => {
     console.log("Going into handloeOnClick...");
-    (this.state.clicked == false) ? (
-        this.setState(this.setState({clicked:true}), console.log("Nice Job..Changed clicked:false to clicked:true"))
+    (this.state.clicked === false) ? (
+      this.handleIfFalse()
       ):
         (alert("You already clicked it..You Lose"));
-
-    this.setState({
-      currentCount: (this.state.currentCount + 1)
-    })
-  }
+  }//end of handleOnclick
 
   render() {
     return (
