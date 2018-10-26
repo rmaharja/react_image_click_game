@@ -12,10 +12,10 @@ class App extends Component {
     currentCount: 0,
     highScore:0
   }
-  handleOnClick(){
+  handleOnClick = () => {
     console.log("Going into handloeOnClick...");
     this.setState({
-      currentCount: this.state.currentCount++
+      currentCount: (this.state.currentCount + 1)
     })
   }
 
