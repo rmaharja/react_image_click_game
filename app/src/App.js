@@ -10,10 +10,17 @@ class App extends Component {
   state = {
     images,
     currentCount: 0,
-    highScore:0
+    highScore: 0,
+    clicked: false
   }
+
   handleOnClick = () => {
     console.log("Going into handloeOnClick...");
+    (this.state.clicked == false) ? (
+        this.setState(this.setState({clicked:true}), console.log("Nice Job..Changed clicked:false to clicked:true"))
+      ):
+        (alert("You already clicked it..You Lose"));
+
     this.setState({
       currentCount: (this.state.currentCount + 1)
     })
