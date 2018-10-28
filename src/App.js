@@ -50,6 +50,13 @@ class App extends Component {
       message:"Nice Job, Click again"
     });
   }
+  handleIfWinner = () => {
+    this.setState({
+      currentCount: 0,
+      clickedArray:[],
+      message: "Winner! Click image to play again!",
+    })
+  }
 
 //If clicked, check if image already exists in the clickedArray
 //If image does not exists in the clikedArray, go to handleIfFalse
@@ -58,17 +65,25 @@ class App extends Component {
     let imageId = event.target.id
     console.log("Going into handloeOnClick...");
     console.log('Image id: ' + imageId);
+
+    //if clicked image is not in the array
     if (this.state.clickedArray.indexOf(imageId) === -1 ) {
-      console.log(imageId+ ' Pushed in an the array');
+     //if clickedArray has 12 items:
+      if (this.state.clickedArray.length === 11){
+        console.log("Winner Winner Chicken Dinner...")
+        this.handleIfWinner();
+      }
+      //if clickedArray does not have 12 items:
+      else{
+      console.log(`ID# ${imageId} clicked...`);
       this.handleIfFalse(imageId);
+      }
     }
-    else if (this.state.clickedArray.length < 12 ){
-      console.log(imageId+ ' Already in Array');
-      this.handleIfTrue();
-    }
+    //if clicked image is already in the array;
     else {
-      console.log("All images sele")
-    }
+        console.log(imageId+ ' Already in Array');
+        this.handleIfTrue();
+      }
   }//end of handleOnclick
   
 
