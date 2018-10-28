@@ -1,15 +1,13 @@
 import React from "react";
 
 
-const Navbar = () => (
-
+const Navbar = ({message}) => (
+  
   <div className="navbar-fixed">
   <nav className = "color light black lighten-3">
-    <div className = "container">
     <div className="nav-wrapper">
-      <a href="index.html" className="brand-logo right">hello friendos </a>
-      <img src="../../public/images/react-materialize-logo.svg" ></img>
-    </div>
+      <a href="index.html" className="brand-logo left">hello friendos </a>
+      <div className="brand-logo center"> {message} </div>
     </div>
   </nav>
   </div>

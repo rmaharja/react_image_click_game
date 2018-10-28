@@ -10,10 +10,9 @@ const Score = (props) => (
 <div>
     <div className="card-panel blue-grey lighten-5" style={styles.mainSection}>
         <div className="container">
-            <p className="flow-text align-center">Click each image ONLY ONCE to win game</p>
-            <p className="flow-text">Current Score:    {props.currentCount}          ||    High Score: {props.highScore}</p> 
-            <p className="flow-text"> Correct/Incorrect</p>
-            <p className="flow-text"></p>
+            <h1 className="flow-text ">Click each image ONLY ONCE to win game</h1>
+            <p className="flow-text">
+            Current Score:    {props.currentCount}          ||    High Score: {props.highScore}</p> 
         </div>
     </div>
 </div> 

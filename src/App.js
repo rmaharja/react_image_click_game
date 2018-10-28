@@ -5,6 +5,16 @@ import Score from "./components/Score";
 import ImageCard from "./components/ImageCard"
 import images from "./images.json";
 
+
+
+const styles = {
+  correct:{
+    color: "green"
+  },
+  wrong:{
+    color: "red"
+  }
+}
 class App extends Component {
 
   state = {
@@ -12,6 +22,7 @@ class App extends Component {
     clickedArray:[],
     currentCount: 0,
     highScore: 0,
+    message: "Click to Start"
   }
   //load immages in after mounting:
   componentDidMount(){
@@ -24,23 +35,25 @@ class App extends Component {
 //increment score by one
 
   handleIfTrue = () => {
-    console.log("You already selected this dude...You Lose");
+    console.log("handleifTrue...");
     this.setState({
     currentCount: 0,
-    clickedArray:[]
+    clickedArray:[],
+    message: "You lose! Click again to restart!"
     });
   }
   handleIfFalse = (imageId) => {
-    console.log("Nice Job..Changed (clicked:false to clicked:true)...");
+    console.log("Going into handleifFalse...");
     this.setState({
       currentCount: (this.state.currentCount + 1),
-      clickedArray: [...this.state.clickedArray, imageId]
+      clickedArray: [...this.state.clickedArray, imageId],
+      message:"Nice Job, Click again"
     });
   }
+
 //If clicked, check if image already exists in the clickedArray
 //If image does not exists in the clikedArray, go to handleIfFalse
 //if image exists go to handIfTrue
-
   handleOnClick = (event) => {
     let imageId = event.target.id
     console.log("Going into handloeOnClick...");
@@ -49,9 +62,12 @@ class App extends Component {
       console.log(imageId+ ' Pushed in an the array');
       this.handleIfFalse(imageId);
     }
-    else{
+    else if (this.state.clickedArray.length < 12 ){
       console.log(imageId+ ' Already in Array');
       this.handleIfTrue();
+    }
+    else {
+      console.log("All images sele")
     }
   }//end of handleOnclick
   
@@ -59,7 +75,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar></Navbar>
+        <Navbar 
+        message={this.state.message}
+        ></Navbar>
 
         <Score
         currentCount={this.state.currentCount}
