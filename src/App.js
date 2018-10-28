@@ -22,7 +22,7 @@ class App extends Component {
     clickedArray:[],
     currentCount: 0,
     highScore: 0,
-    message: "Click to Start"
+    message: "Click image to Start"
   }
   //load immages in after mounting:
   componentDidMount(){
@@ -93,7 +93,6 @@ class App extends Component {
         <Navbar 
         message={this.state.message}
         ></Navbar>
-
         <Score
         currentCount={this.state.currentCount}
         highScore={this.state.highScore}

@@ -4,7 +4,8 @@ const styles = {
   imageSize: {
     height: "100px",
     width: "100px",
-    margin: "20px"
+    margin: "20px",
+    boxShadow: "5px 5px 4px 5px #888888"
   }
 };
 
@@ -34,5 +35,3 @@ const ImageCard = ({images, handleOnClick}) =>{
 }//end of const ImageCard
 
 export default ImageCard;
-
-
