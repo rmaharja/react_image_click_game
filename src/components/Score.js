@@ -12,7 +12,7 @@ const Score = (props) => (
         <div className="container">
             <h1 className="flow-text ">Click each image ONLY ONCE to win game</h1>
             <p className="flow-text">
-            Current Score:    {props.currentCount}          ||    High Score: {props.highScore}</p> 
+            Current Score:    {props.currentCount}          ||  </p> 
         </div>
     </div>
 </div> 
