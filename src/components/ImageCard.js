@@ -12,8 +12,17 @@ const ImageCard = ({images, handleOnClick}) =>{
   
   const imageList = images.map((i)=>{
     return(
-      <div className="image-card">
-        <img src={i.image} key={i.id} style ={styles.imageSize} onClick={handleOnClick}></img>
+      <div className ="row">
+        <div className="col s12 m6 l3">
+        <img 
+          src={i.image}
+          id={i.id} 
+          key={i.id} 
+          style ={styles.imageSize}
+          alt={i.name} 
+          onClick={handleOnClick}>
+        </img>
+        </div>
       </div>
     )
   })

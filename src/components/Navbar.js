@@ -8,7 +8,7 @@ const Navbar = () => (
     <div className = "container">
     <div className="nav-wrapper">
       <a href="index.html" className="brand-logo right">hello friendos </a>
-      <a className="btn-floating btn-large waves-effect waves-light blue"><i className="material-icons">New</i></a>
+      <img src="../../public/images/react-materialize-logo.svg" ></img>
     </div>
     </div>
   </nav>
