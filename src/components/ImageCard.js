@@ -5,7 +5,7 @@ const styles = {
     height: "100px",
     width: "100px",
     margin: "20px",
-    boxShadow: "5px 5px 4px 5px #888888"
+    boxShadow: "5px 5px 4px 5px #888888",
   }
 };
 
@@ -13,9 +13,10 @@ const ImageCard = ({images, handleOnClick}) =>{
   
   const imageList = images.map((i)=>{
     return(
+      <div className="container">
       <div className ="row">
-        <div className="col s12 m6 l3">
-        <img 
+        <div className="col s6 m6 l3">
+        <img class
           src={i.image}
           id={i.id} 
           key={i.id} 
@@ -24,6 +25,7 @@ const ImageCard = ({images, handleOnClick}) =>{
           onClick={handleOnClick}>
         </img>
         </div>
+      </div>
       </div>
     )
   })
