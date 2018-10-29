@@ -18,7 +18,7 @@ const styles = {
 class App extends Component {
 
   state = {
-    images:[],
+    images:images,
     clickedArray:[],
     currentCount: 0,
     highScore: 0,
@@ -26,20 +26,39 @@ class App extends Component {
   }
   //load immages in after mounting:
   componentDidMount(){
-    this.setState({
-      images:images
-    })
+    // this.setState({
+    //   images:images
+    // })
   }
 
 //Move image to clickedArray
 //increment score by one
+  shuffleArray = (array) => {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 
   handleIfTrue = () => {
     console.log("handleifTrue...");
     this.setState({
     currentCount: 0,
     clickedArray:[],
-    message: "You lose! Click again to restart!"
+    message: "You lose! Click again to restart!",
+    images:this.shuffleArray(this.state.images)
     });
   }
   handleIfFalse = (imageId) => {
@@ -47,14 +66,18 @@ class App extends Component {
     this.setState({
       currentCount: (this.state.currentCount + 1),
       clickedArray: [...this.state.clickedArray, imageId],
-      message:"Nice Job, Click again"
+      message:"Nice Job, Click again",
+      images:this.shuffleArray(this.state.images)
+
     });
+    
   }
   handleIfWinner = () => {
     this.setState({
       currentCount: 0,
       clickedArray:[],
       message: "Winner! Click image to play again!",
+      images:this.shuffleArray(this.state.images)
     })
   }
 
