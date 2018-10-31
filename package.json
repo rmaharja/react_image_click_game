@@ -2,11 +2,11 @@
   "name": "first_react_app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://rmaharja.github.io/react_image_click_game",
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5",
-    "homepage": "http://<github-user-name>.github.io/<repo-name>"
+    "react-scripts": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
