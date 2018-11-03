@@ -15,4 +15,4 @@ This project is a simple memory game built using React, using Materialize CSS as
 2.) After the repo is cloned, install the dependencies. (NPM install or Yarn install).<br/>
 3.) After the local dependencies are installed, enter "Yarn start or NPM start" in the command line from the root of the repo.
 4.) The game should run on your localhost:3000<br/>
-5.) Ejoy :)<br/>
+5.) Enjoy (Again) :)<br/>
