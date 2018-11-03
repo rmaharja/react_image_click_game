@@ -1,4 +1,5 @@
-## React memory game (https://rmaharja.github.io/react_image_click_game/)
+## React memory game 
+(https://rmaharja.github.io/react_image_click_game/)
 
 This project is a simple memory game built using React, using Materialize CSS as the primary CSS framework.  The game uses twelve images of our favorite characters from our favorite cartoon shows including a Sponge who lives under the sea and cowardly dog names Courage.  
 
