@@ -4,7 +4,7 @@
 This project is a simple memory game built using React, using Materialize CSS as the primary CSS framework.  The game uses twelve images of our favorite characters from our favorite cartoon shows including a Sponge who lives under the sea and a cowardly dog named Courage.  
 
 ### Game instructions:
-1.) Click on one of the images to start the game!
+1.) Click on one of the images to start the game!<br/>
 2.) After the first image is clicked, the order of the images will be shuffled.
 3.) Scroll down to find the rest of the images and click each of the images only once to win the game! 
 4.) Click the same image twice and you lose! (Don't feel bad it's only a game...Although my 7 year old niece beat it in the first try)
