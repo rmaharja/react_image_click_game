@@ -8,7 +8,8 @@ This project is a simple memory game built using React, using Materialize CSS as
 2.) After the first image is clicked, the order of the images will be shuffled.<br/>
 3.) Scroll down to find the rest of the images and click each of the images only once to win the game! <br/>
 4.) Click the same image twice and you lose! (Don't feel bad it's only a game...Although my 7 year old niece beat it in the first try)<br/>
-5.) Enjoy :)<br/>
+5.) Click 12 images in a row without clicking on them twice to win! <br />
+6.) Enojoy :)
 
 ### Want to play it locally?
 1.) Clone the repo to your local drive.<br/>
